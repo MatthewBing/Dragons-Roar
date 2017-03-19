@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Dragons-Roar</string>
+    <string name="title_activity_voice_button">voiceButton</string>
 </resources>

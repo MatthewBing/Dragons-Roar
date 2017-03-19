@@ -6,6 +6,9 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.speech.RecognizerIntent;
 import android.view.View;
+import android.widget.EditText;
+
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,6 +16,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    /** This is called from the LOAD VOICE BUTTON button on the main screen */
+    public void sendMessage(View view) {
+        Intent intent = new Intent(this, voiceButton.class);
+        startActivity(intent);
     }
 
     //
