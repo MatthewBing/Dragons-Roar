@@ -7,6 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+
+/*
+    This activity is the main usage of this app.
+
+    On this screen, the user can:
+    1: Press the button to activate voice command recognition.
+    2: Hit either the back button or the Up button to return to the main menu.
+ */
 public class voiceButton extends AppCompatActivity {
 
     @Override
@@ -24,6 +32,7 @@ public class voiceButton extends AppCompatActivity {
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
 }
