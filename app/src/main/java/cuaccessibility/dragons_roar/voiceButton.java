@@ -5,6 +5,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +19,7 @@ import com.google.gson.JsonElement;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 import ai.api.android.AIConfiguration;
 import ai.api.android.GsonFactory;
@@ -27,6 +29,8 @@ import ai.api.model.Metadata;
 import ai.api.model.Result;
 import ai.api.model.Status;
 import ai.api.ui.AIButton;
+
+import static java.lang.Integer.valueOf;
 /*
     This activity is the main usage of this app.
 
@@ -49,6 +53,7 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aibutton_sample);
 
@@ -63,6 +68,8 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
 
         aiButton.initialize(config);
         aiButton.setResultsListener(this);
+
+
     }
     protected void checkAudioRecordPermission() {
         if (ContextCompat.checkSelfPermission(this,
@@ -150,19 +157,51 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
                 Log.i(TAG, "Speech: " + speech);
                 //TTS.speak(speech);
 
-                final Metadata metadata = result.getMetadata();
-                if (metadata != null) {
-                    Log.i(TAG, "Intent id: " + metadata.getIntentId());
-                    Log.i(TAG, "Intent name: " + metadata.getIntentName());
-                }
+
+
+                int numOfDice = 0;
+                int numOfSides = 0;
+                String diceRollString = "";
 
                 final HashMap<String, JsonElement> params = result.getParameters();
                 if (params != null && !params.isEmpty()) {
                     Log.i(TAG, "Parameters: ");
                     for (final Map.Entry<String, JsonElement> entry : params.entrySet()) {
                         Log.i(TAG, String.format("%s: %s", entry.getKey(), entry.getValue().toString()));
+                        if(entry.getKey() == "Dice"){
+                            numOfDice = Integer.valueOf(entry.getValue().toString());
+                        }
+                        else if(entry.getKey() == "number"){
+                            numOfSides = Integer.valueOf(entry.getValue().toString());
+                        }
+
                     }
                 }
+
+                final Metadata metadata = result.getMetadata();
+                if (metadata != null) {
+                    Log.i(TAG, "Intent id: " + metadata.getIntentId());
+                    Log.i(TAG, "Intent name: " + metadata.getIntentName());
+                    Random r = new Random();
+                    int diceRollTotal = 0;
+                    while (numOfDice > 0){
+                        diceRollTotal += r.nextInt(valueOf(numOfSides) + 1);
+                        numOfDice = numOfDice - 1;
+                    }
+
+
+                    diceRollString = String.valueOf(diceRollTotal);
+                    Snackbar mySnackbar = Snackbar.make(findViewById(R.id.CoordLayout), diceRollString, Snackbar.LENGTH_SHORT);
+                    mySnackbar.show();
+                }
+
+
+
+
+
+
+
+
             }
 
         });
