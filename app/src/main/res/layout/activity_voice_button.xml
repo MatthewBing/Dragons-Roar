@@ -20,14 +20,5 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_voice_button"
-        android:id="@+id/include" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/voiceButton"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center|center"
-        app:srcCompat="@android:drawable/stat_sys_speakerphone" />
 
 </android.support.design.widget.CoordinatorLayout>
