@@ -13,11 +13,13 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.speech.tts.TextToSpeech;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Random;
 
@@ -47,6 +49,7 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
     public static final String TAG = voiceButton.class.getName();
 
     private AIButton aiButton;
+    private TextToSpeech tts;
     private TextView resultTextView;
     private static final int REQUEST_AUDIO_PERMISSIONS_ID = 33;
     private Gson gson = GsonFactory.getGson();
@@ -193,14 +196,38 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
                     diceRollString = String.valueOf(diceRollTotal);
                     Snackbar mySnackbar = Snackbar.make(findViewById(R.id.CoordLayout), diceRollString, Snackbar.LENGTH_SHORT);
                     mySnackbar.show();
+
                 }
 
+                //TTS handled below
+                tts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener(){
+                    @Override
+                    @SuppressWarnings("deprecation")
+                    public void onInit(int status){
+                        if (status == TextToSpeech.SUCCESS) {
+                            tts.setLanguage(Locale.US);
+                            Log.i(TAG + " TTS SYSTEM", "TTS initialized.");
 
+                            //Handle the different intents back from api.ai
+                            if (metadata.getIntentName().equals("aboutMe")) {
+                                String message = ""; //placeholder
+                                tts.speak(message, TextToSpeech.QUEUE_FLUSH, null);
+                                Log.i(TAG + " TTS SYSTEM", "Message: " + message );
 
+                            } else if (metadata.getIntentName().equals("Roll Dice")) {
+                                tts.speak(speech, TextToSpeech.QUEUE_FLUSH, null);
+                                Log.i(TAG + " TTS SYSTEM", "Message: " + speech);
 
+                            } else {
+                                Log.e(TAG + "TTS SYSTEM", "Unhandled intent!");
+                                tts.speak(speech, TextToSpeech.QUEUE_FLUSH, null);
+                            }
 
-
-
+                        } else {
+                            Log.e(TAG + " TTS SYSTEM", "TTS initialization failed! Check the device.");
+                        }
+                    }
+                });
 
             }
 

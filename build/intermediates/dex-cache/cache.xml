@@ -2,211 +2,22 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="C:\Users\Matthew\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3.1\ecb6e1f8e4b0e84c4b886c2f14a1500caf309757\gson-2.3.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
-        <dex dex="D:\Dragons-Roar\app\build\intermediates\pre-dexed\debug\gson-2.3.1_c19ff8eb59e6a5dcc625f40a523da0c35cbc5587.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Matthew\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-core\2.2\c707664e020218f8529b9a5e55016ee15f0f82ac\log4j-core-2.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c707664e020218f8529b9a5e55016ee15f0f82ac">
-        <dex dex="D:\Dragons-Roar\app\build\intermediates\pre-dexed\debug\log4j-core-2.2_dc228e32623751f6c27a5cdf4a66f24448a326e0.jar" />
-    </item>
-    <item
         is-multidex="true"
-        jar="D:\Dragons-Roar\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="9043638922e8ed7b8ba3150d134279aab5c4dd91">
-        <dex dex="D:\Dragons-Roar\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_cd442d543310a11d41c5104a63835c26aa24effd\classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Matthew\.android\build-cache\277205fcdee6c0c3f84e20b34a3299485593f9e3\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
-        <dex dex="D:\Dragons-Roar\app\build\intermediates\pre-dexed\debug\classes_8423ce2fb711c9f9918c987bd3121085040086fe.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Matthew\.android\build-cache\9a13ee83ae7c278173428c9644f764042dc48cb0\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="D:\Dragons-Roar\app\build\intermediates\pre-dexed\debug\classes_a86c2ecc75e402c17d8b4555daabc643b0983528.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Matthew\.android\build-cache\72748727de1c7cda4592851a02ae85f17d046f33\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e51c2f662bb72419632af5192553c37e33890a99">
-        <dex dex="D:\Dragons-Roar\app\build\intermediates\pre-dexed\debug\classes_ca447e483c2a9bbe2553622f0978bf7713115c20.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Matthew\.gradle\caches\modules-2\files-2.1\ai.api\libai\1.4.8\1386bf51c371e40bf1dc04920b04bd937c04e8ba\libai-1.4.8.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="1386bf51c371e40bf1dc04920b04bd937c04e8ba">
-        <dex dex="D:\Dragons-Roar\app\build\intermediates\pre-dexed\debug\libai-1.4.8_8ca892de94efc779293bdb7b7022e7b614219530.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Matthew\.android\build-cache\9d770bf61d5a73e4e72365e5c174c3e115db7489\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="cb454b52545859ed2f24a6c01366805b0fa04b22">
-        <dex dex="D:\Dragons-Roar\app\build\intermediates\pre-dexed\debug\classes_c91bd12fc3d9e1e9700c7ea5b098102ee6090622.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Matthew\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\25.2.0\support-annotations-25.2.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
-        <dex dex="D:\Dragons-Roar\app\build\intermediates\pre-dexed\debug\support-annotations-25.2.0_2c02d9feec1e96d852574f8c79a429c0a98a5bed.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Matthew\.android\build-cache\8946937535c7e56ddda2623cc8b34abbf2cf0e68\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="7113302c965566b66df46c6ca75ea301576114a5">
-        <dex dex="D:\Dragons-Roar\app\build\intermediates\pre-dexed\debug\classes_e75271119045b253a5b5eedcf161c1ef95faa936.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Matthew\.android\build-cache\cd61e8e82584a792ec641f12b0893351e01b9fe2\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="810f41e5b7fd99f196ebeabe865ba2c54e7e76dc">
-        <dex dex="D:\Dragons-Roar\app\build\intermediates\pre-dexed\debug\classes_1178617b37f62695f02da9dc97ea43f33162c7c5.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Dragons-Roar\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="/Users/lain/StudioProjects/Dragons-Roar/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
-        <dex dex="D:\Dragons-Roar\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_0916a8ac11d76642005cb63da4887e5f52e084f3\classes.dex" />
+        <dex dex="/Users/lain/StudioProjects/Dragons-Roar/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_ecd2850a934bf109189842dd253d14758d9c6571/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\Matthew\.android\build-cache\d012e1d0ba7532038ab6f9b184b592a611d9f8c6\output\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/lain/StudioProjects/Dragons-Roar/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="ea6a989b83d19b1b461281e0475a6cd6514897f8">
-        <dex dex="D:\Dragons-Roar\app\build\intermediates\pre-dexed\debug\classes_2beb530fccf7c10d8013592cf94171ccd6b9a6eb.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Matthew\AppData\Local\Android\Sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.1\constraint-layout-solver-1.0.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="1ad79631209e77b0a2730fc112b4cc0c66a95132">
-        <dex dex="D:\Dragons-Roar\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.1_5ab8481bf912d72f190843392516062cf32a8340.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Matthew\.android\build-cache\8b51f56979baa44f8003132a18d7f7d6eb7db670\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="702d339bc0a81d21354cd7e2cf2b67225fa4a16c">
-        <dex dex="D:\Dragons-Roar\app\build\intermediates\pre-dexed\debug\classes_b14b09703d153e82dbc2ad52c7869275a57269b5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Matthew\.android\build-cache\31ac0b313fd1a454025f8df015f45408db6c5301\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="152de8da301561dcb0946471697a420d8f7a68c5">
-        <dex dex="D:\Dragons-Roar\app\build\intermediates\pre-dexed\debug\classes_cd5191c91535c09178104477d0104ddb62fd938a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Matthew\.android\build-cache\986cb3b48d087acfd709ccee07c5f6cd6a5fbf60\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
-        <dex dex="D:\Dragons-Roar\app\build\intermediates\pre-dexed\debug\classes_70945dc63f7a6edad11140fb4eb7e59f421ed077.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Program Files\Android\Android Studio\gradle\m2repository\commons-io\commons-io\2.4\commons-io-2.4.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad">
-        <dex dex="D:\Dragons-Roar\app\build\intermediates\pre-dexed\debug\commons-io-2.4_b2955a73e8fdec69863902c786dced8321b28c5c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Matthew\.android\build-cache\3f4d2081c0fdd2771c2b8fa04f732aa50ad938ab\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
-        <dex dex="D:\Dragons-Roar\app\build\intermediates\pre-dexed\debug\classes_9e00a1b0a801c37948a3a2ffe9b3c79520b22474.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Matthew\.android\build-cache\39032129099c0af550321adecfffc31e78ecc322\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
-        <dex dex="D:\Dragons-Roar\app\build\intermediates\pre-dexed\debug\classes_65788d68feefa7f07a41d1a930caeb4a5a44b435.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Matthew\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-api\2.2\d7ef6ad7ff0711dd12fe409d62d72d6ed14516e0\log4j-api-2.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7ef6ad7ff0711dd12fe409d62d72d6ed14516e0">
-        <dex dex="D:\Dragons-Roar\app\build\intermediates\pre-dexed\debug\log4j-api-2.2_81d0c13537681eb05c032ad28a23efd52088e701.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Matthew\.android\build-cache\45a4581da9496423f67689b288260b427abb5bff\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
-        <dex dex="D:\Dragons-Roar\app\build\intermediates\pre-dexed\debug\classes_c26f253adc44a2563ef34ae3988c7cdf223bef9a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Matthew\.android\build-cache\b9dcfdf7fd63704332c7e035ce34dcff35d40109\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="eff74f6c0ec5db858ddb943293604c0845217c76">
-        <dex dex="D:\Dragons-Roar\app\build\intermediates\pre-dexed\debug\classes_e888dba8766d7a76936773c62a6627e59d88bb27.jar" />
+        sha1="d1d23624d9039d657411faff720006983db2eb9e">
+        <dex dex="/Users/lain/StudioProjects/Dragons-Roar/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_1670483cca5ecaa07ffaa6590ad304571c259aed/classes.dex" />
     </item>
 
 </items>
