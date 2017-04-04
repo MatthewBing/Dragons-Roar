@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -61,6 +62,7 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
 
         resultTextView = (TextView) findViewById(R.id.resultTextView);
         aiButton = (AIButton) findViewById(R.id.micButton);
+
 
         final AIConfiguration config = new AIConfiguration("7fc1ffac2bb24b6f9e2f5d6b7c587015",
                 AIConfiguration.SupportedLanguages.English,
@@ -152,61 +154,29 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
                 final Result result = response.getResult();
                 Log.i(TAG, "Resolved query: " + result.getResolvedQuery());
 
+
                 Log.i(TAG, "Action: " + result.getAction());
                 final String speech = result.getFulfillment().getSpeech();
                 Log.i(TAG, "Speech: " + speech);
                 //TTS.speak(speech);
-
-
-
-                int numOfDice = 0;
-                String numOfSidesTemp = "";
-                int numOfSides = 0;
-
-                String diceRollString = "";
 
                 final HashMap<String, JsonElement> params = result.getParameters();
                 if (params != null && !params.isEmpty()) {
                     Log.i(TAG, "Parameters: ");
                     for (final Map.Entry<String, JsonElement> entry : params.entrySet()) {
                         Log.i(TAG, String.format("%s: %s", entry.getKey(), entry.getValue().toString()));
-                        if(entry.getKey().equals("Dice")){
-                            numOfSides = Integer.valueOf(entry.getValue().toString().replace("\"", ""));;
-                        }
-                        else if(entry.getKey().equals("number-integer")){
-                            numOfDice = Integer.valueOf(entry.getValue().toString().replace("\"", ""));;
-                        }
-
                     }
                 }
                 final Metadata metadata = result.getMetadata();
-                if (metadata != null) {
-                    Log.i(TAG, "Intent id: " + metadata.getIntentId());
-                    Log.i(TAG, "Intent name: " + metadata.getIntentName());
-                    Random r = new Random();
-                    int diceRollTotal = 0;
-                    int numOfDiceUse = numOfDice;
-                    while (numOfDiceUse > 0) {
-                        diceRollTotal += r.nextInt(valueOf(numOfSides) + 1);
-                        numOfDiceUse = numOfDiceUse - 1;
-                    }
-                    StringBuilder diceRollStringBuild = new StringBuilder(diceRollString);
-                    diceRollStringBuild.append(Integer.toString(numOfDice));
-                    diceRollStringBuild.append("d");
-                    diceRollStringBuild.append(Integer.toString(numOfSides));
-                    diceRollStringBuild.append(" = ");
-                    diceRollStringBuild.append(Integer.toString(diceRollTotal));
-                    String str = diceRollStringBuild.toString();
-                    Snackbar mySnackbar = Snackbar.make(findViewById(R.id.CoordLayout), str, Snackbar.LENGTH_SHORT);
-                    mySnackbar.show();
-                }
 
 
+                resultHandler thisQuery = new resultHandler(params, metadata);
+                String fullResponseForUser = thisQuery.getResponse();
 
 
-
-
-
+                //
+                Snackbar mySnackbar = Snackbar.make(findViewById(R.id.CoordLayout), fullResponseForUser, Snackbar.LENGTH_INDEFINITE);
+                mySnackbar.show();
 
             }
 
