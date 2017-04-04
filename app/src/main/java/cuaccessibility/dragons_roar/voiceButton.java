@@ -160,7 +160,9 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
 
 
                 int numOfDice = 0;
+                String numOfSidesTemp = "";
                 int numOfSides = 0;
+
                 String diceRollString = "";
 
                 final HashMap<String, JsonElement> params = result.getParameters();
@@ -168,30 +170,34 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
                     Log.i(TAG, "Parameters: ");
                     for (final Map.Entry<String, JsonElement> entry : params.entrySet()) {
                         Log.i(TAG, String.format("%s: %s", entry.getKey(), entry.getValue().toString()));
-                        if(entry.getKey() == "Dice"){
-                            numOfDice = Integer.valueOf(entry.getValue().toString());
+                        if(entry.getKey().equals("Dice")){
+                            numOfSides = Integer.valueOf(entry.getValue().toString().replace("\"", ""));;
                         }
-                        else if(entry.getKey() == "number"){
-                            numOfSides = Integer.valueOf(entry.getValue().toString());
+                        else if(entry.getKey().equals("number-integer")){
+                            numOfDice = Integer.valueOf(entry.getValue().toString().replace("\"", ""));;
                         }
 
                     }
                 }
-
                 final Metadata metadata = result.getMetadata();
                 if (metadata != null) {
                     Log.i(TAG, "Intent id: " + metadata.getIntentId());
                     Log.i(TAG, "Intent name: " + metadata.getIntentName());
                     Random r = new Random();
                     int diceRollTotal = 0;
-                    while (numOfDice > 0){
+                    int numOfDiceUse = numOfDice;
+                    while (numOfDiceUse > 0) {
                         diceRollTotal += r.nextInt(valueOf(numOfSides) + 1);
-                        numOfDice = numOfDice - 1;
+                        numOfDiceUse = numOfDiceUse - 1;
                     }
-
-
-                    diceRollString = String.valueOf(diceRollTotal);
-                    Snackbar mySnackbar = Snackbar.make(findViewById(R.id.CoordLayout), diceRollString, Snackbar.LENGTH_SHORT);
+                    StringBuilder diceRollStringBuild = new StringBuilder(diceRollString);
+                    diceRollStringBuild.append(Integer.toString(numOfDice));
+                    diceRollStringBuild.append("d");
+                    diceRollStringBuild.append(Integer.toString(numOfSides));
+                    diceRollStringBuild.append(" = ");
+                    diceRollStringBuild.append(Integer.toString(diceRollTotal));
+                    String str = diceRollStringBuild.toString();
+                    Snackbar mySnackbar = Snackbar.make(findViewById(R.id.CoordLayout), str, Snackbar.LENGTH_SHORT);
                     mySnackbar.show();
                 }
 
