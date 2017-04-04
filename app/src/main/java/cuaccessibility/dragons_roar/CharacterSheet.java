@@ -52,7 +52,7 @@ public class CharacterSheet
         saves.put("Strength", 5);
         saves.put("Dexterity", -1);
         saves.put("Constitution", 5);
-        saves.put("Intelligencen", 0);
+        saves.put("Intelligence", 0);
         saves.put("Wisdom", 1);
         saves.put("Charisma", 0);
 

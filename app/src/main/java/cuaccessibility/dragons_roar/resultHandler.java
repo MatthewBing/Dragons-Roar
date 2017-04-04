@@ -50,6 +50,7 @@ public class resultHandler{
     This is used because something needs to determine which method to use.
      */
     public String getResponse(){
+
         if(metadata != null)
         {
             String command = metadata.getIntentName();
@@ -60,8 +61,20 @@ public class resultHandler{
                 case "Roll Dice":
                     return rollDice();
 
-                case "Get Character Race":
-                    return characterRace();
+                /*
+                Character Info allows access to character information that doesn't change/doesn't change often:
+                Race, Height, Age (mostly), Class, Weight, etc
+                */
+                case "Get Character Info":
+                    return characterInfo();
+
+                /*
+                This Ability Score section deals with everything involving the basic ability scores:
+                Getting and setting the basic numbers, getting the modifiers, and possibly more.
+                */
+                case "Get Ability Score":
+                    return AccessAbilityScores(params.get("AbilityScore").toString()).replace("\"",".");
+
 
                 //Other cases go here based on intent.
 
@@ -76,6 +89,7 @@ public class resultHandler{
     2: Access the data in currentCharacter, passed in by reference from voiceButton.
     3: Generate a full response string that will be sent back to AIButton, which will read it off to the user.
     */
+
     public String rollDice() {
 
         //These two lines access params to get the die type and the number of dice to roll.
@@ -114,9 +128,45 @@ public class resultHandler{
 
     }//ends rollDice
 
-    public String characterRace(){
-        String characterRace = currentCharacter.getRace();
-        return "You are a " + characterRace;
-    }
+    public String characterInfo() {
+
+        String InfoType = (params.get("CharacterInfo").toString()).replace("\"", "");
+
+        if(InfoType.contains("Class"))
+            return "Your class is " + currentCharacter.getCharacterClass();
+
+        if(InfoType.contains("Race"))
+            return "You are a " + currentCharacter.getRace();
+
+        if(InfoType.contains("Size"))
+            return "Your size class is " + currentCharacter.getSize();
+
+        if(InfoType.contains("Name"))
+            return "Your name is " + currentCharacter.getCharacterName();
+
+
+            //case "characterRole":
+              //  return "Your job is to " + currentCharacter.getCharacterRole();
+
+            //case "characterAge":
+              //  return "You are " + currentCharacter.getCharacterAge();
+
+
+        return "No info accessible.";
+    }//Ends CharacterInfo
+
+
+
+    public String AccessAbilityScores(String Ability){
+
+        if (Ability.contains("Modifier"))
+            { return "Your " + Ability + " equals " + currentCharacter.getAbilityScoreMod(Ability); }
+
+        else
+            { return "Your " + Ability + " equals " + currentCharacter.getAbilityScore(Ability); }
+
+    }//Ends AccessAbilityScores method
+
+
 
 }

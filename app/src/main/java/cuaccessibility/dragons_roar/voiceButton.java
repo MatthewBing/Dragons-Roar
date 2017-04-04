@@ -64,7 +64,7 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
         aiButton = (AIButton) findViewById(R.id.micButton);
 
 
-        final AIConfiguration config = new AIConfiguration("7fc1ffac2bb24b6f9e2f5d6b7c587015",
+        final AIConfiguration config = new AIConfiguration("d0c48ed5c9e74317a25a3b49dcf2842d",
                 AIConfiguration.SupportedLanguages.English,
                 AIConfiguration.RecognitionEngine.System);
 
@@ -173,8 +173,6 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
                 resultHandler thisQuery = new resultHandler(params, metadata);
                 String fullResponseForUser = thisQuery.getResponse();
 
-
-                //
                 Snackbar mySnackbar = Snackbar.make(findViewById(R.id.CoordLayout), fullResponseForUser, Snackbar.LENGTH_INDEFINITE);
                 mySnackbar.show();
 
