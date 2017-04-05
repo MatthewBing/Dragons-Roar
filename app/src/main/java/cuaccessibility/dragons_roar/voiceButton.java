@@ -52,6 +52,10 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
     private static final int REQUEST_AUDIO_PERMISSIONS_ID = 33;
     private Gson gson = GsonFactory.getGson();
 
+    //Added by Matt: This resultHandler is what will be used to load the character.
+    //After we implement character loading/saving, it should take a CharacterSheet as an arg.
+    resultHandler thisQuery = new resultHandler();
+
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
 
@@ -63,6 +67,9 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
         resultTextView = (TextView) findViewById(R.id.resultTextView);
         aiButton = (AIButton) findViewById(R.id.micButton);
 
+        //Added by Matt: This resultHandler is what will be used to load the character.
+        //After we implement character loading/saving, it should take a CharacterSheet as an arg.
+        resultHandler thisQuery = new resultHandler();
 
         final AIConfiguration config = new AIConfiguration("d0c48ed5c9e74317a25a3b49dcf2842d",
                 AIConfiguration.SupportedLanguages.English,
@@ -154,7 +161,6 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
                 final Result result = response.getResult();
                 Log.i(TAG, "Resolved query: " + result.getResolvedQuery());
 
-
                 Log.i(TAG, "Action: " + result.getAction());
                 final String speech = result.getFulfillment().getSpeech();
                 Log.i(TAG, "Speech: " + speech);
@@ -169,10 +175,7 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
                 }
                 final Metadata metadata = result.getMetadata();
 
-
-                resultHandler thisQuery = new resultHandler(params, metadata);
-                String fullResponseForUser = thisQuery.getResponse();
-
+                String fullResponseForUser = thisQuery.getResponse(params, metadata);
                 Snackbar mySnackbar = Snackbar.make(findViewById(R.id.CoordLayout), fullResponseForUser, Snackbar.LENGTH_INDEFINITE);
                 mySnackbar.show();
 

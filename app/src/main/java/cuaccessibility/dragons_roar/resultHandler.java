@@ -30,8 +30,19 @@ public class resultHandler{
 
 
 
-    public resultHandler(HashMap<String, JsonElement> paramsInput, Metadata metadatainput )
+    public resultHandler()
     {
+        //The constructor here should eventually take a CharacterSheet as an arg, setting it to currentCharacter.
+    }
+    //end of constructor for resultHandler.
+
+    /*
+    getResponse() is what will be called outside of
+    this class (from voiceButton) and is what will return the full string.
+    This is used because something needs to determine which method to use.
+    */
+
+    public String getResponse(HashMap<String, JsonElement> paramsInput, Metadata metadatainput ){
 
         /*params is a HashMap and contains the params.
         Each method within this class should be able to access
@@ -41,15 +52,6 @@ public class resultHandler{
 
         /*metadata contains the intent ID, which is used to determine which method to call.*/
         metadata = metadatainput;
-    }
-    //end of constructor for resultHandler.
-
-    /*
-    getResponse() is what will be called outside of
-    this class (from voiceButton) and is what will return the full string.
-    This is used because something needs to determine which method to use.
-     */
-    public String getResponse(){
 
         if(metadata != null)
         {
@@ -73,8 +75,8 @@ public class resultHandler{
                 Getting and setting the basic numbers, getting the modifiers, and possibly more.
                 */
                 case "Get Ability Score":
-                    return AccessAbilityScores(params.get("AbilityScore").toString()).replace("\"",".");
-
+                    String AbilityAccessing = params.get("AbilityScore").toString().replace("\"","");
+                    return AccessAbilityScores(AbilityAccessing);
 
                 //Other cases go here based on intent.
 
@@ -82,7 +84,6 @@ public class resultHandler{
         }
         return "Not a valid command";
     }//end getResponse
-
 
     /*This section should begin defining methods that:
     1: Access the information in params and metadata.
@@ -155,12 +156,13 @@ public class resultHandler{
         return "No info accessible.";
     }//Ends CharacterInfo
 
-
-
     public String AccessAbilityScores(String Ability){
 
         if (Ability.contains("Modifier"))
-            { return "Your " + Ability + " equals " + currentCharacter.getAbilityScoreMod(Ability); }
+            {
+                String ModAbility = Ability.replace(" Modifier", "");
+                return "Your " + Ability + " equals " + currentCharacter.getAbilityScoreMod(ModAbility);
+            }
 
         else
             { return "Your " + Ability + " equals " + currentCharacter.getAbilityScore(Ability); }
