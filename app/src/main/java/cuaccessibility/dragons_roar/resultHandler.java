@@ -76,9 +76,30 @@ public class resultHandler{
                     String AbilityAccessing = params.get("AbilityScore").toString().replace("\"","");
                     return AccessAbilityScores(AbilityAccessing);
 
+                case "Get Skill Proficiency":
+                    //Parameters returned from API.AI: SkillName
+                    return "Skill Proficiency Under Development!";
+
+                case "Get Inventory Items":
+                    //Parameters returned from API.AI: TypeOfItem
+                    return "Inventory Under Development!";
+
+                case "Get Equipped Gear":
+                    //Parameters returned from API.AI: SpecificGear
+
+                /* SPELL SECTION */
+
+                case "Cast Spell":
+                    //Parameters returned from API.AI: SpellName
+
+                case "Spell Lookup":
+                    //Parameters returned from API.AI: SpellName, ???
+
+                case "Get Temporary Info":
+                    //Parameters returned from API.AI: TempInfoType
 
 
-                //Other cases go here based on intent.
+                //Other cases go here based on the NAME OF THE INTENT in API.AI.
 
             }
         }
