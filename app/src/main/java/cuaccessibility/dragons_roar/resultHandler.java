@@ -28,8 +28,6 @@ public class resultHandler{
     //This is where the current character should be loaded/referenced. For now it makes a new one from the constructor.
     CharacterSheet currentCharacter = new CharacterSheet();
 
-
-
     public resultHandler()
     {
         //The constructor here should eventually take a CharacterSheet as an arg, setting it to currentCharacter.
@@ -78,11 +76,15 @@ public class resultHandler{
                     String AbilityAccessing = params.get("AbilityScore").toString().replace("\"","");
                     return AccessAbilityScores(AbilityAccessing);
 
+
+
+
                 //Other cases go here based on intent.
 
             }
         }
         return "Not a valid command";
+
     }//end getResponse
 
     /*This section should begin defining methods that:
@@ -94,8 +96,10 @@ public class resultHandler{
     public String rollDice() {
 
         //These two lines access params to get the die type and the number of dice to roll.
-        int numOfDice = Integer.valueOf((params.get("number-integer").toString()).replace("\"", ""));
-        int numOfSides = Integer.valueOf((params.get("Dice").toString()).replace("\"", ""));
+        String howmanydice = (params.get("NumberOfDice").toString()).replace("\"", "");
+        int numOfDice = Integer.valueOf(howmanydice);
+        String sides = (params.get("Dice").toString()).replace("\"", "");
+        int numOfSides = Integer.valueOf(sides);
 
         //These three lines are used for the random number generation section.
         Random r = new Random();
@@ -144,7 +148,6 @@ public class resultHandler{
 
         if(InfoType.contains("Name"))
             return "Your name is " + currentCharacter.getCharacterName();
-
 
             //case "characterRole":
               //  return "Your job is to " + currentCharacter.getCharacterRole();
