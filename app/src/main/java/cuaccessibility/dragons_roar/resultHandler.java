@@ -78,7 +78,6 @@ public class resultHandler{
 
 
 
-
                 //Other cases go here based on intent.
 
             }
