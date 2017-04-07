@@ -150,7 +150,13 @@ public class CharacterSheet
     }
 
     public void takeDamage(int value){
-        currentHitPoints = currentHitPoints- value;
+        tempHitPoints = tempHitPoints- value;
+
+        if(tempHitPoints < 0){
+            currentHitPoints = currentHitPoints + tempHitPoints;
+            tempHitPoints = 0;
+        }
+
         if(currentHitPoints < 0){
             currentHitPoints = 0;
         }
@@ -160,9 +166,13 @@ public class CharacterSheet
         tempHitPoints = value;
     }
 
+    public int getTempHP(){ return tempHitPoints;}
+
     public Map<String, Integer> getInventory(){
         return inventory;
     }
+
+    public int getItem(String item){ return inventory.get(item); }
 
     public void addToInventory(String name, int amount){
         int value = inventory.get(name);
