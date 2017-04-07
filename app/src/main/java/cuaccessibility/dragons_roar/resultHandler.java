@@ -169,6 +169,10 @@ public class resultHandler{
         if(InfoType.contains("Name"))
             return "Your name is " + currentCharacter.getCharacterName();
 
+        if(InfoType.contains("Alignment"))
+            return "You aligment is " + currentCharacter.getAlignment();
+
+
             //case "characterRole":
               //  return "Your job is to " + currentCharacter.getCharacterRole();
 
@@ -191,6 +195,74 @@ public class resultHandler{
             { return "Your " + Ability + " equals " + currentCharacter.getAbilityScore(Ability); }
 
     }//Ends AccessAbilityScores method
+
+    public String SkillAccess(String Skill){
+            String SkillBonus = Skill.replace(" Bonus", "");
+            return "Your " + Skill + " equals " + currentCharacter.getSkillBonus(SkillBonus);
+    }
+
+    public String InventoryAccess(String Item){
+        if(Item.contains("Count")){ //"How many daggers do I have" ==> "Dagger Count"
+            String ItemName = Item.replace(" Count", "");
+            return "You have " + currentCharacter.getItem(ItemName);
+        } else if(Item.contains("Add")){    //"Add 10 gold" ==> "10 Gold Add"
+            String addItem = Item.replace(" Add", "");
+            String[] parts = addItem.split(" ");
+            currentCharacter.addToInventory(parts[1], Integer.parseInt(parts[0]));
+
+            return "You have added " + parts[0] + " " +  parts[1] + " to you inventory";
+
+        } else { //"What is in my inventory" ==> "Inventory Lookup"
+            return "stuff";
+        }
+    }
+
+    public String SaveAccess(String Save){
+        //"What is my Strength Save" ==> "Strength Save"
+        String SaveAbility = Save.replace(" Save", ")");
+        return "Your " + SaveAbility + " save bonus is " + currentCharacter.getSave(SaveAbility);
+    }
+
+
+    public String HealthAccess(String Intent){
+        if(Intent.contains("Add")){ //Restore 10 HP ==> Health 10 Add
+            String addHealth = Intent.replace(" Add", "");
+            String[] parts = addHealth.split(" ");
+            currentCharacter.addHealth(Integer.parseInt(parts[1]));
+
+            return "Your health is now at " + currentCharacter.getCurrentHP();
+        } else if(Intent.contains("Remove")){ //"Take 10 Damage ==> Heath 10 Remove
+            String removeHealth = Intent.replace(" Remove", "");
+            String[] parts = removeHealth.split(" ");
+            currentCharacter.takeDamage(Integer.parseInt(parts[1]));
+
+            return "Your health is now at " + currentCharacter.getCurrentHP();
+        } else if(Intent.contains("Temp")){ //Add 5 Temp HP ==> Heath 10 Temp
+            String addTemp = Intent.replace(" Temp", "");
+            String[] parts = addTemp.split(" ");
+            currentCharacter.setTempHP(Integer.parseInt(parts[1]));
+        }
+
+        return "You have " + currentCharacter.getCurrentHP() + " and " + currentCharacter.getTempHP() + " temporary hit points";
+    }
+
+    public String SpellLookup(String Spell){
+
+        return "spell lookup in progress, try again later";
+    }
+    /*
+    case "Get Skill Proficiency":
+                case "Get Equipped Gear":
+                        //Parameters returned from API.AI: SpecificGear
+                        case "Cast Spell":
+                        //Parameters returned from API.AI: SpellName
+
+                        case "Spell Lookup":
+                        //Parameters returned from API.AI: SpellName, ???
+
+                        case "Get Temporary Info":
+    //Parameters returned from API.AI: TempInfoType
+                                */
 
 
 
