@@ -6,6 +6,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.speech.RecognizerIntent;
 import android.view.View;
+import android.util.Log;
 
 
 
@@ -23,5 +24,4 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //
 }

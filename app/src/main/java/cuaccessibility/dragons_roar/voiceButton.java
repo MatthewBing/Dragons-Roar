@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -49,10 +50,10 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
     public static final String TAG = voiceButton.class.getName();
 
     private AIButton aiButton;
-    private TextToSpeech tts;
     private TextView resultTextView;
     private static final int REQUEST_AUDIO_PERMISSIONS_ID = 33;
     private Gson gson = GsonFactory.getGson();
+    private TextToSpeech tts;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -73,7 +74,21 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
         aiButton.setResultsListener(this);
 
 
+        tts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int statusCode) {
+                if (statusCode == TextToSpeech.SUCCESS) {
+                    tts.setLanguage(Locale.US);
+                    Log.i(TAG, "TTS has been initialized");
+                } else {
+                    Log.i(TAG, "TTS could not be initialized");
+                    //What else should we do in this case?
+                }
+            }
+        });
     }
+
+
     protected void checkAudioRecordPermission() {
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.RECORD_AUDIO)
@@ -171,10 +186,10 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
                     Log.i(TAG, "Parameters: ");
                     for (final Map.Entry<String, JsonElement> entry : params.entrySet()) {
                         Log.i(TAG, String.format("%s: %s", entry.getKey(), entry.getValue().toString()));
-                        if(entry.getKey() == "Dice"){
+                        if(entry.getKey().equals("Dice")){
                             numOfDice = Integer.valueOf(entry.getValue().toString());
                         }
-                        else if(entry.getKey() == "number"){
+                        else if(entry.getKey().equals(("number"))){
                             numOfSides = Integer.valueOf(entry.getValue().toString());
                         }
 
@@ -243,6 +258,7 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
                 resultTextView.setText(error.toString());
             }
         });
+        tts.speak("I didn't get that", TextToSpeech.QUEUE_FLUSH, null);
     }
 
     @Override

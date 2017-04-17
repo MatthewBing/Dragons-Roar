@@ -42,7 +42,8 @@ public enum Number {
     NINETY_PHON(90, "50530"),
     HUNDRED(100, "053603"),
     HUNDRED_and(100, "053603053"),
-    HUNDRE(100, "05360");
+    HUNDRE(100, "05360"),
+    HUNDRED_AN(100, "05360305");
 
     private final int value;
     private final String code;

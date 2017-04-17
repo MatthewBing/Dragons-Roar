@@ -3,6 +3,78 @@
 
     <item
         is-multidex="true"
+        jar="/Users/lain/.android/build-cache/c3f0877f68c99ef7e3cc3706f81b8f7d9cca57f3/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
+        <dex dex="/Users/lain/StudioProjects/Dragons-Roar/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c6c381a1444c0dd8777e9ef4fae2780f88878f94/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lain/.android/build-cache/261f9423db3a45edecc465decc258741d4a41810/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e51c2f662bb72419632af5192553c37e33890a99">
+        <dex dex="/Users/lain/StudioProjects/Dragons-Roar/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d2bbeb2b0316a8cad13cdc6d128ea4a125e3bcb5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lain/.android/build-cache/30dff94b52a5ce67837b496fd4ab0558de549d74/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="810f41e5b7fd99f196ebeabe865ba2c54e7e76dc">
+        <dex dex="/Users/lain/StudioProjects/Dragons-Roar/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ff781cee816321220b49080a17d20cf04f723e64/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lain/.android/build-cache/6f0f1ad6adfc8a5fc162739725e6323dc5b122d0/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="152de8da301561dcb0946471697a420d8f7a68c5">
+        <dex dex="/Users/lain/StudioProjects/Dragons-Roar/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9411d19b54bcde4469f1fa1002ef88f91d31cf8f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lain/.android/build-cache/bfc0451f5a5f51cdbfafd44c874acea657cb42ca/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
+        <dex dex="/Users/lain/StudioProjects/Dragons-Roar/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_134f037365f7f0898d9ec654d6974404b6d4ae64/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lain/.android/build-cache/a40a5e1b76a27277ecad32161d57ec94d63d4ce5/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ea6a989b83d19b1b461281e0475a6cd6514897f8">
+        <dex dex="/Users/lain/StudioProjects/Dragons-Roar/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8a77f1300782d3457f8e460627c496e91a0d927a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lain/.android/build-cache/f9c5a16e60964f6073838d81091529e61a36642e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
+        <dex dex="/Users/lain/StudioProjects/Dragons-Roar/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e6374f348d1654c9a259e5ad85a49ae59aaef854/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lain/.android/build-cache/bc45289ea76336f4c772075973242c68acf17a7e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
+        <dex dex="/Users/lain/StudioProjects/Dragons-Roar/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_474674f5e5086e08c80db14bad5764e85ea3b386/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/lain/StudioProjects/Dragons-Roar/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
@@ -12,12 +84,48 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/lain/.android/build-cache/75ff8954612288122891fe3381f042fb1c7cd5ed/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cb454b52545859ed2f24a6c01366805b0fa04b22">
+        <dex dex="/Users/lain/StudioProjects/Dragons-Roar/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ee611115c0021b2aa945ca8918254b6d62346a7c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lain/.android/build-cache/d83fef4ac01d0cd75778230a9a9c321c6dfd806b/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/lain/StudioProjects/Dragons-Roar/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_0af27435f8083c7de7e35a57f8ea289a1f692a8f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/lain/StudioProjects/Dragons-Roar/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="d1d23624d9039d657411faff720006983db2eb9e">
+        sha1="c42293fb2b81f66e3dbbac7be56ff76839aeb4c2">
         <dex dex="/Users/lain/StudioProjects/Dragons-Roar/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_1670483cca5ecaa07ffaa6590ad304571c259aed/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lain/.android/build-cache/9698ef8537841368822c31e236123002b51741ac/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
+        <dex dex="/Users/lain/StudioProjects/Dragons-Roar/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8df56621c9b7e0e9e29f28257dca4af3e794adda/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lain/.android/build-cache/f45b7c11bda66a669863925d0bf85266ac98687d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="702d339bc0a81d21354cd7e2cf2b67225fa4a16c">
+        <dex dex="/Users/lain/StudioProjects/Dragons-Roar/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d3da82712c200bd7518e7a2c0813aa494cb5adfe/classes.dex" />
     </item>
 
 </items>
