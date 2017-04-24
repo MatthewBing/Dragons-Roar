@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Dragons-Roar</string>
+    <string name="action_settings">Settings</string>
+    <string name="continueButton">continue last character</string>
+    <string name="newChar">Create new character</string>
+    <string name="voiceCommand">Voice command</string>
     <string name="title_activity_voice_button">voiceButton</string>
 </resources>

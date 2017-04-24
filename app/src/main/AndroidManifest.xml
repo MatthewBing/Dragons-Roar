@@ -8,11 +8,16 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="MainMenuMainActivity"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:theme="@style/AppTheme"
+        android:configChanges="keyboardHidden|orientation|screenSize">
+        <activity
+            android:name=".MainMenuMainActivity"
+            android:screenOrientation="portrait"
+            android:label="Dragon's Roar"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,11 +27,11 @@
         <activity
             android:name=".voiceButton"
             android:label="@string/title_activity_voice_button"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".MainMenuMainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="cuaccessibility.dragons_roar.MainActivity" />
+                android:value="cuaccessibility.dragons_roar.MainMenuMainActivity" />
         </activity>
     </application>
 
