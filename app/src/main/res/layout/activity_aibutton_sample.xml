@@ -9,29 +9,99 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/resultTextView"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_above="@+id/bottom_container" />
+
+            <Spinner
+                android:id="@+id/selectLanguageSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></Spinner>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/eventsCheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+                <Spinner
+                    android:id="@+id/selectEventSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></Spinner>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/textQuery"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@android:color/white" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buttonSend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="Send"
+                    android:onClick="buttonSend"
+                    />
+
+                <Button
+                    android:id="@+id/buttonClear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/buttonSend"
+                    android:text="clear"
+                    android:onClick="buttonClear"
+                    />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/contextEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="add Context here"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <ai.api.ui.AIButton
+            android:id="@+id/micButton"
+            android:layout_height="152dp"
+            style="@style/ApiAi.Microphone"
+            android:layout_above="@+id/bottom_container"
+            android:layout_centerHorizontal="true" />
+
 
         <RelativeLayout
             android:id="@+id/bottom_container"
             android:layout_width="fill_parent"
             android:layout_height="200dp"
-            android:layout_alignParentBottom="true">
-
-            <ai.api.ui.AIButton
-                android:id="@+id/micButton"
-                android:layout_height="152dp"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-
-                style="@style/ApiAi.Microphone"
-
-                />
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/resultTextView"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            />
 
         </RelativeLayout>
 

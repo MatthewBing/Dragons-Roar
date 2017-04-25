@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     /** This is called from the LOAD VOICE BUTTON button on the main screen */
     public void sendMessage(View view) {
         Intent intent = new Intent(this, voiceButton.class);
+        //voiceButton.class
         startActivity(intent);
     }
 

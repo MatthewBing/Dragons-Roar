@@ -27,21 +27,23 @@ android {
 }
 
 dependencies {
-    compile 'ai.api:libai:1.4.8'
-    compile 'ai.api:sdk:2.0.5@aar'
     // api.ai SDK dependencies
-    compile 'com.android.support:appcompat-v7:25.2.0'
-    compile 'commons-io:commons-io:2.4'
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.2.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.1'
-    compile 'com.android.support:design:25.2.0'
-    testCompile 'junit:junit:4.12'
     androidTestCompile files('src/test/java/cuaccessibility/dragons_roar/junit-4.12.jar')
 
+    compile 'ai.api:libai:1.4.8'
+    compile 'ai.api:sdk:2.0.5@aar'
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'commons-io:commons-io:2.4'
+    compile 'com.android.support.constraint:constraint-layout:1.0.1'
+    compile 'com.android.support:design:25.2.0'
+    compile 'com.android.support:support-v4:25.3.0'
+    testCompile 'junit:junit:4.12'
 }
+
 
 
