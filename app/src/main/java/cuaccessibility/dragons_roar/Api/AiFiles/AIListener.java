@@ -1,6 +1,5 @@
-package cuaccessibility.dragons_roar;
+package cuaccessibility.dragons_roar.Api.AiFiles;
 
-import ai.api.android.AIConfiguration;
 import ai.api.model.AIError;
 import ai.api.model.AIResponse;
 

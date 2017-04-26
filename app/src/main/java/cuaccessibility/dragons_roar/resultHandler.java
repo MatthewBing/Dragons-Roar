@@ -1,15 +1,14 @@
 package cuaccessibility.dragons_roar;
 
-import android.support.design.widget.Snackbar;
-import android.util.Log;
+
 
 import com.google.gson.JsonElement;
 
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
 import ai.api.model.Metadata;
+import cuaccessibility.dragons_roar.Character.Blueprint.CharacterSheet;
 
 import static java.lang.Integer.valueOf;
 
@@ -72,13 +71,24 @@ public class resultHandler{
                 This Ability Score section deals with everything involving the basic ability scores:
                 Getting and setting the basic numbers, getting the modifiers, and possibly more.
                 */
+                case "Get Temporary Info":
+                    String TempInfoReturning = params.get("TempInfoType").toString().replace("\"","");
+                    return Integer.toString(getTempValue(TempInfoReturning));
+
+                case "Modify Temp Value":
+                    String ThingToModify = params.get("TempInfoType").toString().replace("\"","");
+                    String ActionTaking = params.get("ChangeWords").toString().replace("\"","");
+                    String Value = params.get("number-integer").toString().replace("\"","");
+                    return ModifyTempValue(ThingToModify, ActionTaking, Value);
+
                 case "Get Ability Score":
                     String AbilityAccessing = params.get("AbilityScore").toString().replace("\"","");
                     return AccessAbilityScores(AbilityAccessing);
 
                 case "Get Skill Proficiency":
                     //Parameters returned from API.AI: SkillName
-                    return "Skill Proficiency Under Development!";
+                    String SkillReturning = params.get("SkillName").toString().replace("\"","");
+                    return SkillAccess(SkillReturning);
 
                 case "Get Inventory Items":
                     //Parameters returned from API.AI: TypeOfItem
@@ -95,8 +105,6 @@ public class resultHandler{
                 case "Spell Lookup":
                     //Parameters returned from API.AI: SpellName, ???
 
-                case "Get Temporary Info":
-                    //Parameters returned from API.AI: TempInfoType
 
 
                 //Other cases go here based on the NAME OF THE INTENT in API.AI.
@@ -173,6 +181,7 @@ public class resultHandler{
             return "You aligment is " + currentCharacter.getAlignment();
 
 
+
             //case "characterRole":
               //  return "Your job is to " + currentCharacter.getCharacterRole();
 
@@ -182,6 +191,47 @@ public class resultHandler{
 
         return "No info accessible.";
     }//Ends CharacterInfo
+
+
+    public int getTempValue(String tempInfoType){
+        return Integer.parseInt(tempInfoType);
+    }
+
+    public String ModifyTempValue(String ThingToModify, String ActionTaking, String Value){
+        //In this first case, the user has specified a value. This is likely the most common case, so it goes first.
+        if(!Value.equals("")){
+            switch(ActionTaking){
+                case "Increase":
+                    currentCharacter.setTempValue(ThingToModify, Integer.parseInt(currentCharacter.getTempValue(ThingToModify))+Integer.parseInt(Value));
+                case "Decrease":
+                    currentCharacter.setTempValue(ThingToModify, Integer.parseInt(currentCharacter.getTempValue(ThingToModify))-Integer.parseInt(Value));
+                case "Reset":
+                    //??? what to do with "Reset Health to 0"  ????
+            }
+        }
+
+        //If the user did not say a value, default to 1, or in the case of reset, reset it to it's default value.
+        else
+            switch(ActionTaking){
+                //Increase ThingToModify by 1.
+                case "Increasing":
+                    currentCharacter.setTempValue(ThingToModify, Integer.parseInt(currentCharacter.getTempValue(ThingToModify)) + 1);
+                    return "Increasing " + ThingToModify + " by 1. New value is " + getTempValue(ThingToModify);
+
+                case "Decreasing":
+                    currentCharacter.setTempValue(ThingToModify, Integer.parseInt(currentCharacter.getTempValue(ThingToModify)) - 1);
+                    return "Decreasing " + ThingToModify + " by 1. New value is " + getTempValue(ThingToModify);
+
+                case "Reset":
+                    //Since in this case, we're always dealing with temp values, just set it to 0.
+                    currentCharacter.setTempValue(ThingToModify, 0);
+                    //DOESNT WORK FOR HEALTH
+                    return "Re-setting " + ThingToModify + " to 0.";
+
+        }
+        return "Probably shouldn't get here?";
+    }
+
 
     public String AccessAbilityScores(String Ability){
 
@@ -201,10 +251,12 @@ public class resultHandler{
             return "Your " + Skill + " equals " + currentCharacter.getSkillBonus(SkillBonus);
     }
 
+    //******************************GETITEM NEEDS IMPLEMENTATION*************
     public String InventoryAccess(String Item){
         if(Item.contains("Count")){ //"How many daggers do I have" ==> "Dagger Count"
             String ItemName = Item.replace(" Count", "");
-            return "You have " + currentCharacter.getItem(ItemName);
+            return "You have THIS MANY OF THIS ITEM (wip) ";
+                    //currentCharacter.getItem(ItemName);
         } else if(Item.contains("Add")){    //"Add 10 gold" ==> "10 Gold Add"
             String addItem = Item.replace(" Add", "");
             String[] parts = addItem.split(" ");
@@ -229,14 +281,14 @@ public class resultHandler{
             String addHealth = Intent.replace(" Add", "");
             String[] parts = addHealth.split(" ");
             currentCharacter.addHealth(Integer.parseInt(parts[1]));
-
             return "Your health is now at " + currentCharacter.getCurrentHP();
+
         } else if(Intent.contains("Remove")){ //"Take 10 Damage ==> Heath 10 Remove
             String removeHealth = Intent.replace(" Remove", "");
             String[] parts = removeHealth.split(" ");
             currentCharacter.takeDamage(Integer.parseInt(parts[1]));
-
             return "Your health is now at " + currentCharacter.getCurrentHP();
+
         } else if(Intent.contains("Temp")){ //Add 5 Temp HP ==> Heath 10 Temp
             String addTemp = Intent.replace(" Temp", "");
             String[] parts = addTemp.split(" ");

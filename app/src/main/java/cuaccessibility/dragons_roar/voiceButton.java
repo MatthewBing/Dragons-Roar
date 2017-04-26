@@ -2,19 +2,14 @@ package cuaccessibility.dragons_roar;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -24,31 +19,20 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
 
 import ai.api.AIServiceException;
-import ai.api.RequestExtras;
 import ai.api.android.AIConfiguration;
 import ai.api.android.AIDataService;
 import ai.api.android.AIService;
 import ai.api.android.GsonFactory;
-import ai.api.model.AIContext;
 import ai.api.model.AIError;
-import ai.api.model.AIEvent;
 import ai.api.model.AIRequest;
 import ai.api.model.AIResponse;
 import ai.api.model.Metadata;
 import ai.api.model.Result;
 import ai.api.model.Status;
 import ai.api.ui.AIButton;
-
-
-
-import static java.lang.Integer.valueOf;
 /*
     This activity is the main usage of this app.
 
@@ -178,7 +162,7 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
     }
 
     public void buttonClear(View view){
-        resultTextView.setText("");
+        queryEditText.setText("");
     }
 
 
@@ -223,7 +207,7 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
                 }
-                return;
+
             }
         }
     }
