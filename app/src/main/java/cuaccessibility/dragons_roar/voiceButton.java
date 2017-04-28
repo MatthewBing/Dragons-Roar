@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -20,6 +21,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 
 import java.util.HashMap;
+import java.util.Locale;
 
 import ai.api.AIServiceException;
 import ai.api.android.AIConfiguration;
@@ -59,6 +61,7 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
     private Spinner eventSpinner;
     private AIDataService aiDataService;
     private EditText contextEditText;
+    private TextToSpeech tts;
 
 
     private TextView resultTextView;
@@ -100,7 +103,27 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
         aiButton.initialize(config);
         aiButton.setResultsListener(this);
         aiDataService = new AIDataService(this, config);
+
+
+        //Text To Speech Initialization
+        tts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int statusCode) {
+                if (statusCode == TextToSpeech.SUCCESS) {
+                    tts.setLanguage(Locale.US);
+                    Log.i(TAG, "TTS has been initialized");
+                } else {
+                    Log.i(TAG, "TTS could not be initialized");
+                    //What else should we do in this case?
+                }
+            }
+        });
+
+
     }
+
+
+
 
 
     private void sendRequest() {
@@ -203,7 +226,6 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
                     // contacts-related task you need to do.
 
                 } else {
-
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
                 }
@@ -270,6 +292,7 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
 
                 String fullResponseForUser = thisQuery.getResponse(params, metadata);
                 resultsLog = fullResponseForUser + " \n" + resultsLog;
+                tts.speak(fullResponseForUser, TextToSpeech.QUEUE_FLUSH, null);
                 resultTextView.setText(resultsLog);
                 //Snackbar mySnackbar = Snackbar.make(findViewById(R.id.CoordLayout), fullResponseForUser, Snackbar.LENGTH_INDEFINITE);
                 //mySnackbar.show();
