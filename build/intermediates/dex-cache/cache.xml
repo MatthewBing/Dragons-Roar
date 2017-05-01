@@ -3,192 +3,30 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\toray\.android\build-cache\e341c24cc0cbf13c688316be8442925200e43a4c\output\jars\classes.jar"
+        jar="/Users/lain/.android/build-cache/32b1c402366ca7ad7944cd236f1fa539602573ec/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
-        <dex dex="C:\Users\toray\Documents\Dragons-Roar\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_594660a48b7130567eea50a685900c76cddbd5c0\classes.dex" />
+        sha1="cc03ddac6017ba6366944c3eb01efc8751a00a6b">
+        <dex dex="/Users/lain/StudioProjects/Dragons-Roar/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1024940916d7ad7ee8a2ad32328ce2a0d1479fb7/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\toray\.android\build-cache\5d00e7cf57e551404c87c901b6011007714eb3c5\output\jars\classes.jar"
+        jar="/Users/lain/StudioProjects/Dragons-Roar/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="152de8da301561dcb0946471697a420d8f7a68c5">
-        <dex dex="C:\Users\toray\Documents\Dragons-Roar\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_396776240d95b5cc95b365d9d625cda249c24ceb\classes.dex" />
+        sha1="449673b8b956e949d9607d022efd1fc04e28f2d8">
+        <dex dex="/Users/lain/StudioProjects/Dragons-Roar/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_1670483cca5ecaa07ffaa6590ad304571c259aed/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\toray\.android\build-cache\928584f5de080c67e3684b63f9841584e89b2001\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\toray\Documents\Dragons-Roar\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c68f23f36790d140ae34a0e39d816045fb9fd8fe\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\toray\.android\build-cache\5a0fe2476bd3869d47008046e97ef00b979bda18\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
-        <dex dex="C:\Users\toray\Documents\Dragons-Roar\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_5b2fefd40c13466e6892c20c637eede377ed50b0\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\toray\.android\build-cache\48f3425b4e238d2a0b435473816a8d8b24be5e93\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="810f41e5b7fd99f196ebeabe865ba2c54e7e76dc">
-        <dex dex="C:\Users\toray\Documents\Dragons-Roar\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_efdafa17718fec5a57b5d93c35a2dffa0c24d910\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\toray\.android\build-cache\3883e94e8f361ad9b5f832b70658e1b4ef6bc1b8\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
-        <dex dex="C:\Users\toray\Documents\Dragons-Roar\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_02b90dcb821004f89307d5089a6d10f3fd0e6a47\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\toray\.android\build-cache\77ca0e2ae9d2aa4a41389629c7508e9ae7b91401\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="cb454b52545859ed2f24a6c01366805b0fa04b22">
-        <dex dex="C:\Users\toray\Documents\Dragons-Roar\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4a94c97e3b832045f44c6dd2a214e45f456d7885\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\toray\.android\build-cache\bad7c9bc0090d7ebbc8a25ebf026c83b3e9f00fd\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="702d339bc0a81d21354cd7e2cf2b67225fa4a16c">
-        <dex dex="C:\Users\toray\Documents\Dragons-Roar\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_809ff2bd2509c1ae042a52a3abdd38a3f7f997d2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\toray\.android\build-cache\19ff1f05bbfaef73ed54a5ef61c014bd4bc37ede\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
-        <dex dex="C:\Users\toray\Documents\Dragons-Roar\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_da167e7ac8675b21bbbb73fc3cf36991297b302d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Program Files\Android\Android Studio\gradle\m2repository\commons-io\commons-io\2.4\commons-io-2.4.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad">
-        <dex dex="C:\Users\toray\Documents\Dragons-Roar\app\build\intermediates\transforms\dex\debug\folders\1000\10\commons-io-2.4_b2955a73e8fdec69863902c786dced8321b28c5c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\toray\.android\build-cache\0bb7aa5d068b50c1e3fa4f74a3a794512e07e6c8\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e51c2f662bb72419632af5192553c37e33890a99">
-        <dex dex="C:\Users\toray\Documents\Dragons-Roar\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_55655b5abd2521b2f81774978ed7ff97d6d885f9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\toray\.gradle\caches\modules-2\files-2.1\ai.api\libai\1.4.8\1386bf51c371e40bf1dc04920b04bd937c04e8ba\libai-1.4.8.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="1386bf51c371e40bf1dc04920b04bd937c04e8ba">
-        <dex dex="C:\Users\toray\Documents\Dragons-Roar\app\build\intermediates\transforms\dex\debug\folders\1000\10\libai-1.4.8_1043e0fb1b401012c43432a14000a710d9c27862\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\toray\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3.1\ecb6e1f8e4b0e84c4b886c2f14a1500caf309757\gson-2.3.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
-        <dex dex="C:\Users\toray\Documents\Dragons-Roar\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.3.1_31e2ac33278da37655fd109d4d18e6deb609e7c2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\toray\.android\build-cache\9d5018db3a3c3013a0ec46a49c1316bf69546d69\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="eff74f6c0ec5db858ddb943293604c0845217c76">
-        <dex dex="C:\Users\toray\Documents\Dragons-Roar\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_35246d961e54584474c50a2da1ec29fc84659af1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\toray\.android\build-cache\076db3a69516589c85eaff5ad234c2f62c414f7f\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
-        <dex dex="C:\Users\toray\Documents\Dragons-Roar\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e9145022bd8a4ba6e9b3df643a1d90d370d0fc92\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\toray\Documents\Dragons-Roar\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0665af262c539a4056024669a57d9bd54a328792">
-        <dex dex="C:\Users\toray\Documents\Dragons-Roar\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_57513440e81badc158c4127f34dec52cb4acfb43\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\toray\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-core\2.2\c707664e020218f8529b9a5e55016ee15f0f82ac\log4j-core-2.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c707664e020218f8529b9a5e55016ee15f0f82ac">
-        <dex dex="C:\Users\toray\Documents\Dragons-Roar\app\build\intermediates\transforms\dex\debug\folders\1000\10\log4j-core-2.2_1e7df724cb78ced86bc0200a8f81aff6c641530b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\toray\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.2.0\support-annotations-25.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
-        <dex dex="C:\Users\toray\Documents\Dragons-Roar\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.2.0_c804b93d685f53c889ae22023d1c829ddf2d4768\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\toray\Documents\Dragons-Roar\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="/Users/lain/StudioProjects/Dragons-Roar/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
-        <dex dex="C:\Users\toray\Documents\Dragons-Roar\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_f400a4fb487c98b70378c0a9771a92b7720c9cbd\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\toray\.android\build-cache\754c927dedf9fdc17eae51626262ef6571d930ef\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ea6a989b83d19b1b461281e0475a6cd6514897f8">
-        <dex dex="C:\Users\toray\Documents\Dragons-Roar\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7117133dd01229bdf2e3a5b8cb493344103371ec\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\toray\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-api\2.2\d7ef6ad7ff0711dd12fe409d62d72d6ed14516e0\log4j-api-2.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7ef6ad7ff0711dd12fe409d62d72d6ed14516e0">
-        <dex dex="C:\Users\toray\Documents\Dragons-Roar\app\build\intermediates\transforms\dex\debug\folders\1000\10\log4j-api-2.2_a5ae4ef5d1ad665d86d4dd4695a2998f5f5e2b35\classes.dex" />
+        <dex dex="/Users/lain/StudioProjects/Dragons-Roar/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_ecd2850a934bf109189842dd253d14758d9c6571/classes.dex" />
     </item>
 
 </items>
