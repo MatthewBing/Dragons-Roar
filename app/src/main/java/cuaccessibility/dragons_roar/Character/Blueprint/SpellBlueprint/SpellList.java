@@ -101,7 +101,7 @@ public class SpellList {
         String name = spellList.get(spellNameSearch).getSpellName();
         String castTime = spellList.get(spellNameSearch).getCastingTime();
         String components = spellList.get(spellNameSearch).getComponents();
-        String description = spellList.get(spellNameSearch).getDuration();
+        String description = spellList.get(spellNameSearch).getDescription();
         String duration = spellList.get(spellNameSearch).getDuration();
         int spellLevel = spellList.get(spellNameSearch).getLevel();
         String range = spellList.get(spellNameSearch).getRange();
@@ -109,10 +109,10 @@ public class SpellList {
 
     switch(command){
 
-        case "full description":
+        case "Full Description":
             return name + ": " + "Casting Time: " + castTime + "Description: " + description + "Duration: " + duration + "Level: " + spellLevel + "Range: " + range + "School: " + school;
 
-        case "Casting time":
+        case "Casting Time":
             return name + ": " + castTime;
 
         case "Components":
