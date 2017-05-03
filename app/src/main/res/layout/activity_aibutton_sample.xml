@@ -2,35 +2,101 @@
     android:id="@+id/CoordLayout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/resultTextView"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/linearLayout">
 
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_above="@+id/bottom_container" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/textQuery"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:textSize="20sp"
+                android:background="@android:color/white"
+                android:backgroundTint="@android:color/darker_gray"
+                android:textAlignment="center"
+                />
+
+            <android.support.percent.PercentRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buttonSend"
+                    app:layout_widthPercent="25%"
+                    android:layout_height="wrap_content"
+                    android:text="Send"
+                    android:textSize="20sp"
+                    android:onClick="buttonSend"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    app:layout_marginRightPercent="20%"
+                    app:layout_marginTopPercent="3%"/>
+
+                <Button
+                    android:id="@+id/buttonClear"
+                    app:layout_widthPercent="25%"
+                    android:layout_height="wrap_content"
+                    android:text="clear"
+                    android:textSize="20sp"
+                    android:onClick="buttonClear"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    app:layout_marginLeftPercent="20%"
+                    app:layout_marginTopPercent="3%"/>
+
+            </android.support.percent.PercentRelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <ai.api.ui.AIButton
+            android:tag="Voice Button"
+            android:id="@+id/micButton"
+            android:layout_height="152sp"
+            style="@style/ApiAi.Microphone"
+            android:layout_below="@+id/linearLayout"
+            android:layout_centerHorizontal="true" />
+
 
         <RelativeLayout
             android:id="@+id/bottom_container"
             android:layout_width="fill_parent"
-            android:layout_height="200dp"
-            android:layout_alignParentBottom="true">
+            android:layout_height="fill_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/micButton">
 
-            <ai.api.ui.AIButton
-                android:id="@+id/micButton"
-                android:layout_height="152dp"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-
-                style="@style/ApiAi.Microphone"
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/resultTextView"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 />
 
         </RelativeLayout>

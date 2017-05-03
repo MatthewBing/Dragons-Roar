@@ -13,8 +13,8 @@
     <Button
         android:id="@+id/newChar"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:layout_width="156dp"
-        android:layout_height="65dp"
+        android:layout_width="210sp"
+        android:layout_height="65sp"
         android:background="@android:color/holo_red_dark"
         android:text="New Character"
         android:textColor="@android:color/black"
@@ -28,8 +28,8 @@
     <Button
         android:id="@+id/voiceCommand"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:layout_width="156dp"
-        android:layout_height="65dp"
+        android:layout_width="210sp"
+        android:layout_height="65sp"
         android:background="@android:color/holo_red_dark"
         android:text="Voice Command"
         android:textColor="@android:color/black"
@@ -59,8 +59,8 @@
     <Button
         android:id="@+id/continueButton"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:layout_width="156dp"
-        android:layout_height="65dp"
+        android:layout_width="210sp"
+        android:layout_height="65sp"
         android:background="@android:color/holo_red_dark"
         android:text="Continue"
         android:textColor="@android:color/black"
