@@ -1,16 +1,10 @@
 package cuaccessibility.dragons_roar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
-import android.content.ActivityNotFoundException;
-import android.content.Intent;
-import android.speech.RecognizerIntent;
-
-
-import cuaccessibility.dragons_roar.R;
 
 public class MainMenuMainActivity extends AppCompatActivity {
 
@@ -19,6 +13,8 @@ public class MainMenuMainActivity extends AppCompatActivity {
     private Button mVoiceCommandButton;
 
     private Button mNewCharacterButton;
+
+    //private SpellList spellList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +25,14 @@ public class MainMenuMainActivity extends AppCompatActivity {
         mContinueButton = (Button) findViewById(R.id.continueButton);
 
 
+
+
         mNewCharacterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenuMainActivity.this, voiceButton.class);
                 startActivity(intent);
+
             }
         });
 

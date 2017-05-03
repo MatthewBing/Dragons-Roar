@@ -1,6 +1,7 @@
 package cuaccessibility.dragons_roar;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -20,8 +21,13 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 
+import org.json.JSONException;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 import ai.api.AIServiceException;
 import ai.api.android.AIConfiguration;
@@ -56,7 +62,6 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
 
     private TextView queryEditText;
 
-
     private CheckBox eventCheckBox;
     private Spinner eventSpinner;
     private AIDataService aiDataService;
@@ -72,16 +77,29 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
 
     //Added by Matt: This resultHandler is what will be used to load the character.
     //After we implement character loading/saving, it should take a CharacterSheet as an arg.
-    resultHandler thisQuery = new resultHandler();
+    resultHandler thisQuery;
+
+    public voiceButton() throws FileNotFoundException, JSONException {
+    }
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
 
+
+        try {
+            thisQuery = new resultHandler(voiceButton.this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aibutton_sample);
 
         checkAudioRecordPermission();
 
+
+        Context currentContext = voiceButton.this;
         resultTextView = (TextView) findViewById(R.id.resultTextView);
         resultTextView.setSingleLine(false);
         resultsLog = "";
@@ -92,11 +110,13 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
 
         service = aiButton.getAIService();
 
+
+
         //Added by Matt: This resultHandler is what will be used to load the character.
         //After we implement character loading/saving, it should take a CharacterSheet as an arg.
-        resultHandler thisQuery = new resultHandler();
 
-        final AIConfiguration config = new AIConfiguration("d0c48ed5c9e74317a25a3b49dcf2842d",
+
+        final AIConfiguration config = new AIConfiguration("a7df5dcce21542b8b625fc643b561311",
                 AIConfiguration.SupportedLanguages.English,
                 AIConfiguration.RecognitionEngine.System);
 
@@ -123,7 +143,9 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
     }
 
 
-
+    public Context getContext(voiceButton voiceButton){
+        return voiceButton.this;
+    }
 
 
     private void sendRequest() {
@@ -250,9 +272,6 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
         aiButton.resume();
     }
 
-
-
-
     @Override
     public void onResult(final AIResponse response) {
         runOnUiThread(new Runnable() {
@@ -280,17 +299,22 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
                 final HashMap<String, JsonElement> params = result.getParameters();
                 final Metadata metadata = result.getMetadata();
 
-                /*
+
                 if (params != null && !params.isEmpty()) {
                     Log.i(TAG, "Parameters: ");
                     for (final Map.Entry<String, JsonElement> entry : params.entrySet()) {
                         Log.i(TAG, String.format("%s: %s", entry.getKey(), entry.getValue().toString()));
                     }
-                }*/
+                }
 
-
-
-                String fullResponseForUser = thisQuery.getResponse(params, metadata);
+                String fullResponseForUser = null;
+                try {
+                    fullResponseForUser = thisQuery.getResponse(params, metadata);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
                 resultsLog = fullResponseForUser + " \n" + resultsLog;
                 tts.speak(fullResponseForUser, TextToSpeech.QUEUE_FLUSH, null);
                 resultTextView.setText(resultsLog);
@@ -301,9 +325,6 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
 
         });
     }
-
-
-
 
     @Override
     public void onError(final AIError error) {

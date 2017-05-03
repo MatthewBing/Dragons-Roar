@@ -1,14 +1,20 @@
 package cuaccessibility.dragons_roar;
 
 
+import android.content.Context;
 
 import com.google.gson.JsonElement;
 
+import org.json.JSONException;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Random;
 
 import ai.api.model.Metadata;
 import cuaccessibility.dragons_roar.Character.Blueprint.CharacterSheet;
+import cuaccessibility.dragons_roar.Character.Blueprint.SpellBlueprint.SpellList;
 
 import static java.lang.Integer.valueOf;
 
@@ -26,11 +32,13 @@ public class resultHandler{
 
     //This is where the current character should be loaded/referenced. For now it makes a new one from the constructor.
     CharacterSheet currentCharacter = new CharacterSheet();
+    SpellList spellList;
 
-    public resultHandler()
-    {
-        //The constructor here should eventually take a CharacterSheet as an arg, setting it to currentCharacter.
+    public resultHandler(Context voiceButtonContext) throws IOException, JSONException {
+        spellList = new SpellList(voiceButtonContext);
     }
+    //The constructor here should eventually take a CharacterSheet as an arg, setting it to currentCharacter.
+
     //end of constructor for resultHandler.
 
     /*
@@ -39,7 +47,7 @@ public class resultHandler{
     This is used because something needs to determine which method to use.
     */
 
-    public String getResponse(HashMap<String, JsonElement> paramsInput, Metadata metadatainput ){
+    public String getResponse(HashMap<String, JsonElement> paramsInput, Metadata metadatainput ) throws FileNotFoundException, JSONException {
 
         /*params is a HashMap and contains the params.
         Each method within this class should be able to access
@@ -87,8 +95,11 @@ public class resultHandler{
 
                 case "Get Skill Proficiency":
                     //Parameters returned from API.AI: SkillName
-                    String SkillReturning = params.get("SkillName").toString().replace("\"","");
+                    String SkillReturning = params.get("Skills").toString().replace("\"","");
                     return SkillAccess(SkillReturning);
+
+
+                /*Inventory and Gear section*/
 
                 case "Get Inventory Items":
                     //Parameters returned from API.AI: TypeOfItem
@@ -97,13 +108,17 @@ public class resultHandler{
                 case "Get Equipped Gear":
                     //Parameters returned from API.AI: SpecificGear
 
+
                 /* SPELL SECTION */
 
                 case "Cast Spell":
                     //Parameters returned from API.AI: SpellName
 
                 case "Spell Lookup":
-                    //Parameters returned from API.AI: SpellName, ???
+                    //Parameters returned from API.AI: SpellNames, SpellInfo
+                    String lookupType = params.get("SpellInfo").toString().replace("\"","");
+                    String spellName = params.get("SpellNames").toString().replace("\"","");
+                    return spellInfo(lookupType, spellName);
 
 
 
@@ -178,16 +193,16 @@ public class resultHandler{
             return "Your name is " + currentCharacter.getCharacterName();
 
         if(InfoType.contains("Alignment"))
-            return "You aligment is " + currentCharacter.getAlignment();
+            return "Your alignment is " + currentCharacter.getAlignment();
 
+        if(InfoType.contains("Background"))
+            return "Your background is " + currentCharacter.getBackground();
 
+        //case "characterRole":
+            //  return "Your job is to " + currentCharacter.getCharacterRole();
 
-            //case "characterRole":
-              //  return "Your job is to " + currentCharacter.getCharacterRole();
-
-            //case "characterAge":
-              //  return "You are " + currentCharacter.getCharacterAge();
-
+        //case "characterAge":
+            //  return "You are " + currentCharacter.getCharacterAge();
 
         return "No info accessible.";
     }//Ends CharacterInfo
@@ -199,7 +214,7 @@ public class resultHandler{
 
     public String ModifyTempValue(String ThingToModify, String ActionTaking, String Value){
         //In this first case, the user has specified a value. This is likely the most common case, so it goes first.
-        if(!Value.equals("")){
+        if(Integer.parseInt(Value)!=0){
             switch(ActionTaking){
                 case "Increase":
                     currentCharacter.setTempValue(ThingToModify, Integer.parseInt(currentCharacter.getTempValue(ThingToModify))+Integer.parseInt(Value));
@@ -223,15 +238,14 @@ public class resultHandler{
                     return "Decreasing " + ThingToModify + " by 1. New value is " + getTempValue(ThingToModify);
 
                 case "Reset":
-                    //Since in this case, we're always dealing with temp values, just set it to 0.
-                    currentCharacter.setTempValue(ThingToModify, 0);
+                    //Set the ThingToModify to it's default value.
+                    //currentCharacter.resetValue(ThingToModify, 0);
                     //DOESNT WORK FOR HEALTH
-                    return "Re-setting " + ThingToModify + " to 0.";
+                    return "Re-setting " + ThingToModify + " is not currently supported!";
 
         }
         return "Probably shouldn't get here?";
     }
-
 
     public String AccessAbilityScores(String Ability){
 
@@ -275,7 +289,7 @@ public class resultHandler{
         return "Your " + SaveAbility + " save bonus is " + currentCharacter.getSave(SaveAbility);
     }
 
-
+/*
     public String HealthAccess(String Intent){
         if(Intent.contains("Add")){ //Restore 10 HP ==> Health 10 Add
             String addHealth = Intent.replace(" Add", "");
@@ -297,11 +311,14 @@ public class resultHandler{
 
         return "You have " + currentCharacter.getCurrentHP() + " and " + currentCharacter.getTempHP() + " temporary hit points";
     }
+    */
 
-    public String SpellLookup(String Spell){
-
-        return "spell lookup in progress, try again later";
+    public String spellInfo(String spellInfo, String spellName) throws FileNotFoundException, JSONException {
+        return spellList.Spells(spellInfo, spellName);
     }
+
+
+
     /*
     case "Get Skill Proficiency":
                 case "Get Equipped Gear":
