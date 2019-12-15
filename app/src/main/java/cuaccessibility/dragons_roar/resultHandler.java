@@ -41,6 +41,8 @@ public class resultHandler{
 
     //end of constructor for resultHandler.
 
+
+
     /*
     getResponse() is what will be called outside of
     this class (from voiceButton) and is what will return the full string.
@@ -112,6 +114,7 @@ public class resultHandler{
                 /* SPELL SECTION */
 
                 case "Cast Spell":
+                    return "Spells Under Development!";
                     //Parameters returned from API.AI: SpellName
 
                 case "Spell Lookup":

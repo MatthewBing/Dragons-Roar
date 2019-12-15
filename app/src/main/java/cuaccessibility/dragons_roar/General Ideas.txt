@@ -1,0 +1,5 @@
+-Create a system in which the DM has their own version of the app that they can: 
+pull up maps, draw on them, save, fog of war, etc. Also, they could keep track of the party's current initiative and stats, abilities (hide them to themselves if desired) and most importantly, connect all of this with the party's apps as clients. This way the DM can even send notes privately to users and vice versa, as well as prompt them to roll for certain things like initiative.
+
+-If there's a way for the DM to be able to have access to special commands, like "Everyone, roll for inititive", then it could prompt the users to do so. They could either do so using the app or by rolling their dice and inputting a D20 and doing it manually. The DM can have them "reset" their dice roll if they forgot to add in some special bonus, but ideally that kind of thing could be manually programmed in/could use MPMB's character sheet. 
+

@@ -28,11 +28,10 @@
                 android:id="@+id/textQuery"
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
-                android:textSize="20sp"
                 android:background="@android:color/white"
                 android:backgroundTint="@android:color/darker_gray"
                 android:textAlignment="center"
-                />
+                android:textSize="20sp" />
 
             <android.support.percent.PercentRelativeLayout
                 android:layout_width="match_parent"

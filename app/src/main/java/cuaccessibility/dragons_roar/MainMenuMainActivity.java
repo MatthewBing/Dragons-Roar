@@ -60,7 +60,6 @@ public class MainMenuMainActivity extends AppCompatActivity {
     public void sendMessage(View view) {
         Intent intent = new Intent(MainMenuMainActivity.this, voiceButton.class);
         startActivity(intent);
-
     }
 
 

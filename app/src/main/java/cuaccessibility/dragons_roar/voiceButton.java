@@ -79,8 +79,11 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
     //After we implement character loading/saving, it should take a CharacterSheet as an arg.
     resultHandler thisQuery;
 
-    public voiceButton() throws FileNotFoundException, JSONException {
+    //Used to have throws FileNotFoundException, JSONException in contructor
+    public voiceButton()  {
     }
+
+
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -143,10 +146,16 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
     }
 
 
+
     public Context getContext(voiceButton voiceButton){
         return voiceButton.this;
     }
 
+
+    public void testInputString(String test){
+        queryEditText.setText(test);
+        sendRequest();
+    }
 
     private void sendRequest() {
 
@@ -209,7 +218,6 @@ public class voiceButton extends AppCompatActivity implements AIButton.AIButtonL
     public void buttonClear(View view){
         queryEditText.setText("");
     }
-
 
 
     protected void checkAudioRecordPermission() {
